@@ -20,4 +20,6 @@ RUN apt-get update && apt-get install -y \
     && pecl install redis \
     && docker-php-ext-enable redis \
     && pecl install swoole \
-    && docker-php-ext-enable swoole
+    && docker-php-ext-enable swoole \
+    && cd /usr/src/php/ext/mbstring && /usr/local/bin/phpize && ./configure --with-php-config=/usr/local/bin/php-config 
+## 在php.ini挂载文件中手动加入extension=mbstring.so
