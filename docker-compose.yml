@@ -48,17 +48,18 @@ services:
  # database
  mysql:
    image: mysql:latest
+   # restart: always
    container_name: wdy-mysql
    ports:
      # Allow client to access 3306
      - "3306:3306"
    volumes:
      # NOTE: your data will be stored in ./mysql
-     - ./mysql:/var/lib/mysql
-     - ./mysql/own.cnf:/etc/mysql/conf.d/own.cnf
+     - ./mysql_data:/var/lib/mysql:rw
+     - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
    environment:
      - MYSQL_ROOT_PASSWORD=root
-   # entrypoint: ['/entrypoint.sh', '--character-set-server=utf8', '--collation-server=utf8_general_ci']
+   # entrypoint: ['/entrypoint.sh']
    networks:
      - net-mysql
 
