@@ -2,4 +2,5 @@
 *.pem
 *.crt
 *.csr
+*.swp
 !.gitignore
