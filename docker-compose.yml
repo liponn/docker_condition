@@ -13,6 +13,8 @@ services:
      # nginx configs
      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
+     # nginx logs
+     - ./nginx/log:/var/log/nginx
      # certificates
      - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
      - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
