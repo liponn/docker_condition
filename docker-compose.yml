@@ -20,14 +20,14 @@ services:
      - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
      - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
    networks:
-     - net-php
+     - kkb-net
 
    # php-fpm
  fpm:
    build: ./php-fpm
    container_name: docker-php
    ports:
-     - "9000"
+     - 9001:9000
    volumes:
      - ./app/src:/usr/share/nginx/html
      # Your php.ini
@@ -40,9 +40,7 @@ services:
      # - DB_USERNAME=
      # - DB_PASSWORD=
    networks:
-     - net-php
-     - net-mysql
-     - net-redis
+     - kkb-net
 
  # database
  mysql:
@@ -60,7 +58,7 @@ services:
      - MYSQL_ROOT_PASSWORD=root
    # entrypoint: ['/entrypoint.sh']
    networks:
-     - net-mysql
+     - kkb-net
 
 
 
@@ -68,12 +66,16 @@ services:
  redis:
    image: redis:latest
    container_name: docker-redis
+   volumes:
+     - ./redis_data:/data:rw
+     - ./redis_conf/redis.conf:/etc/redis.conf:ro
+   command:
+     redis-server 
    networks:
-     - net-redis
+     - kkb-net
    ports:
      - "6379:6379"
 
 networks:
-  net-php:
-  net-mysql:
-  net-redis:
+  kkb-net:
+    driver: bridge
