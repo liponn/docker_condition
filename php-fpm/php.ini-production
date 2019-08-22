@@ -1995,7 +1995,6 @@ ldap.max_links = -1
 ; End:
 
 [xdebug]
-zend_extension=xdebug.so
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
 xdebug.remote_host=192.168.80.138
