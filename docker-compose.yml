@@ -41,8 +41,12 @@ services:
      # - DB_PASSWORD=
    networks:
      - kkb-net
-
- # database
+   # hosts
+   extra_hosts:
+     - "inner-api-passport.kaikeba.com:192.168.80.138"
+     - "inner-api-tss.kaikeba.com:192.168.80.138"
+ 
+# database
  mysql:
    image: mysql:latest
    # restart: always
