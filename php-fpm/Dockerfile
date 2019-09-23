@@ -18,7 +18,7 @@ deb https://mirrors.aliyun.com/debian buster-updates main > /etc/apt/sources.lis
 # You can install php extensions using docker-php-ext-install
 ######
 apt-get update && apt-get install -y \
-telnet \
+rinetd \
 apt-utils \
 libfreetype6-dev \
 libjpeg62-turbo-dev \
@@ -35,6 +35,11 @@ unzip \
 && pecl install xdebug \
 && pecl install swoole \
 && docker-php-ext-enable redis swoole xdebug 
+
+##rinetd 端口映射 解决php连接127.0.0.1:redis
+##/etc/rinetd.conf
+##0.0.0.0 6379 docker-redis 6379
+
 ## 安装composer php
 RUN curl -sS https://getcomposer.org/installer | php \
 && mv composer.phar /usr/local/bin/composer
