@@ -45,6 +45,7 @@ services:
    extra_hosts:
      - "inner-api-passport.kaikeba.com:192.168.80.138"
      - "inner-api-tss.kaikeba.com:192.168.80.138"
+     - "mysql-base.base:192.168.30.61"
  
 # database
  mysql:
