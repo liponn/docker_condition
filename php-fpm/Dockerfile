@@ -5,10 +5,15 @@
 FROM php:7.1-fpm
 MAINTAINER lip <13015531717@163.com>
 
+########  set time
+
+RUN rm -rf /etc/localtime \
+&& ln -s /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
+
 ######
 # change sources.list
 ######
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+&& mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
 echo \
 deb https://mirrors.aliyun.com/debian buster main \
 deb https://mirrors.aliyun.com/debian-security buster/updates main \
@@ -34,12 +39,51 @@ unzip \
 && pecl install redis \
 && pecl install xdebug \
 && pecl install swoole \
-&& docker-php-ext-enable redis swoole xdebug 
+&& docker-php-ext-enable redis swoole xdebug \
 
 ##rinetd 端口映射 解决php连接127.0.0.1:redis
 ##/etc/rinetd.conf
-##0.0.0.0 6379 docker-redis 6379
+&& echo '0.0.0.0 6379 docker-redis 6379' >> /etc/rinetd.conf
 
 ## 安装composer php
 RUN curl -sS https://getcomposer.org/installer | php \
 && mv composer.phar /usr/local/bin/composer
+
+
+COPY ./entrypoint.sh /
+RUN chmod +x /entrypoint.sh
+
+# 设置 ENTRYPOINT
+ENTRYPOINT /entrypoint.sh
+
+
+
+
+##########.bashrc 宿主机调用容器php命令
+##php () {
+##        app_dir=$(basename `pwd`)
+##        tty=
+##        tty -s && tty=--tty
+##        docker exec \
+##        $tty \
+##        --interactive \
+##        --workdir /usr/share/nginx/html/$app_dir \
+##        docker-php php "$@"
+##}
+
+
+
+##composer () {
+##        tty=
+##        tty -s && tty=--tty
+##        docker run \
+##            $tty \
+##            --interactive \
+##            --rm \
+##            --user $(id -u):$(id -g) \
+##            --volume ~/composer:/tmp \
+##            --volume /etc/passwd:/etc/passwd:ro \
+##            --volume /etc/group:/etc/group:ro \
+##            --volume $(pwd):/app \
+##            docker_condition_fpm composer "$@"
+##}

@@ -32,20 +32,14 @@ services:
      - ./app/src:/usr/share/nginx/html
      # Your php.ini
      - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
-   # environment:
-     # Set your APP env variables here:
-     # - APP_KEY=
-     # - DB_HOST=
-     # - DB_DATABASE=
-     # - DB_USERNAME=
-     # - DB_PASSWORD=
+     - ./php-fpm/entrypoint.sh:/entrypoint.sh:ro
+   working_dir: /usr/share/nginx/html
    networks:
      - kkb-net
    # hosts
    extra_hosts:
      - "inner-api-passport.kaikeba.com:192.168.80.138"
      - "inner-api-tss.kaikeba.com:192.168.80.138"
-     - "mysql-base.base:192.168.30.61"
  
 # database
  mysql:
@@ -61,7 +55,7 @@ services:
      - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
    environment:
      - MYSQL_ROOT_PASSWORD=root
-   # entrypoint: ['/entrypoint.sh']
+   #当停掉mysql时防止数据丢失  entrypoint: ['/entrypoint.sh']
    networks:
      - kkb-net
 
