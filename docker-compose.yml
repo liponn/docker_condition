@@ -36,10 +36,7 @@ services:
    working_dir: /usr/share/nginx/html
    networks:
      - kkb-net
-   # hosts
-   extra_hosts:
-     - "inner-api-passport.kaikeba.com:192.168.80.138"
-     - "inner-api-tss.kaikeba.com:192.168.80.138"
+
  
 # database
  mysql:

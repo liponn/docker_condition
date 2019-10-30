@@ -43,7 +43,7 @@ unzip \
 
 ##rinetd 端口映射 解决php连接127.0.0.1:redis
 ##/etc/rinetd.conf
-&& echo '0.0.0.0 6379 docker-redis 6379' >> /etc/rinetd.conf
+&& echo -e '0.0.0.0 6379 docker-redis 6379\n0.0.0.0 80 docker-nginx 80' >> /etc/rinetd.conf
 
 ## 安装composer php
 RUN curl -sS https://getcomposer.org/installer | php \
