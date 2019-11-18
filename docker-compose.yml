@@ -30,6 +30,8 @@ services:
      - 9001:9000
    volumes:
      - ./app/src:/usr/share/nginx/html
+     #同步宿主机的sshkey到docker
+     - ~/.ssh:/root/.ssh:ro
      # Your php.ini
      - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
      - ./php-fpm/entrypoint.sh:/entrypoint.sh:ro
