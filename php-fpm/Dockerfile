@@ -72,18 +72,13 @@ ENTRYPOINT /entrypoint.sh
 ##}
 
 
-
 ##composer () {
+##        app_dir=$(basename `pwd`)
 ##        tty=
 ##        tty -s && tty=--tty
-##        docker run \
-##            $tty \
-##            --interactive \
-##            --rm \
-##            --user $(id -u):$(id -g) \
-##            --volume ~/composer:/tmp \
-##            --volume /etc/passwd:/etc/passwd:ro \
-##            --volume /etc/group:/etc/group:ro \
-##            --volume $(pwd):/app \
-##            docker_condition_fpm composer "$@"
+##        docker exec \
+##        $tty \
+##        --interactive \
+##        --workdir /usr/share/nginx/html/$app_dir \
+##        docker-php composer "$@"
 ##}
