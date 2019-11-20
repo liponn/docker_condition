@@ -1997,7 +1997,7 @@ ldap.max_links = -1
 [xdebug]
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
-xdebug.remote_host=10.20.10.138
+xdebug.remote_host=10.20.10.248
 xdebug.remote_port=9011
 xdebug.idekey=PHPSTORM
 xdebug.remote_autostart=1
