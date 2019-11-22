@@ -1997,7 +1997,9 @@ ldap.max_links = -1
 [xdebug]
 xdebug.remote_enable=1
 xdebug.remote_handler=dbgp
-xdebug.remote_host=10.20.10.248
+; https://docs.docker.com/docker-for-mac/networking/#use-cases-and-workarounds
+; 鉴于mac宿主机 ip变化。这里写死的局限性
+xdebug.remote_host=host.docker.internal
 xdebug.remote_port=9011
 xdebug.idekey=PHPSTORM
 xdebug.remote_autostart=1
