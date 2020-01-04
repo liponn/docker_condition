@@ -33,13 +33,25 @@ git \
 vim \
 zip \
 unzip \
-&& docker-php-ext-install -j$(nproc) mcrypt pcntl zip pdo_mysql \
+&& docker-php-ext-install -j$(nproc) mcrypt pcntl zip pdo_mysql bcmath \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd \
 && pecl install redis \
 && pecl install xdebug \
 && pecl install swoole \
-&& docker-php-ext-enable redis swoole xdebug \
+&& docker-php-ext-enable redis swoole xdebug 
+
+##安装lib kafuka
+RUN git clone https://github.com/edenhill/librdkafka.git \
+&& cd librdkafka \
+&& ./configure \
+&& make && make install
+RUN git clone https://github.com/arnaud-lb/php-rdkafka.git \
+&& cd php-rdkafka \
+&& phpize \
+&& ./configure --with-php-config=/usr/local/bin/php-config \
+&& make && make install \
+
 
 ##rinetd 端口映射 解决php连接127.0.0.1:redis
 ##/etc/rinetd.conf
