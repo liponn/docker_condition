@@ -4,3 +4,4 @@
 *.csr
 *.swp
 !.gitignore
+.docker-sync/
