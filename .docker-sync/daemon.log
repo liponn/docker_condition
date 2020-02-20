@@ -1,0 +1,212 @@
+          ok  Starting native_osx for sync appcode-sync
+          ok  appcode-sync container still running, restarting unison in container
+     command  docker exec appcode-sync supervisorctl restart unison
+unison: stopped
+unison: started
+          ok  starting initial sync of appcode-sync
+     success  Sync container started
+     success  Showing unison logs from your sync container: appcode-sync
+[2020-02-13 11:26:03 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:26:02.53 on 13 Feb 2020
+[2020-02-13 11:26:03 +0800] Sync Log:  [BGN] Copying test.dat from /app_sync to /host_sync
+[2020-02-13 11:26:04 +0800] Sync Log:  [END] Copying test.dat
+[2020-02-13 11:26:04 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:26:03.73 on 13 Feb 2020
+[2020-02-13 11:26:04 +0800] Sync Log:  Synchronization complete at 11:26:03  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 11:26:11 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:26:10.15 on 13 Feb 2020
+[2020-02-13 11:26:11 +0800] Sync Log:  [BGN] Deleting test.dat from /host_sync
+[2020-02-13 11:26:11 +0800] Sync Log:  [END] Deleting test.dat
+[2020-02-13 11:26:11 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:26:10.56 on 13 Feb 2020
+[2020-02-13 11:26:11 +0800] Sync Log:  Synchronization complete at 11:26:10  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 11:56:28 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:56:28.41 on 13 Feb 2020
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/app from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/app
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/app/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/app/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/app/public from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/app/public
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/app/public/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/app/public/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/cache from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/cache
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/cache/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/cache/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/sessions from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/sessions
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/sessions/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/sessions/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/testing from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/testing
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/testing/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/testing/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/views from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/views
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/views/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/views/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/views/1b5a5a7c0f1c41207923f6c8389b268e9fc68680.php from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/views/1b5a5a7c0f1c41207923f6c8389b268e9fc68680.php
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/views/1fb55e30bd5b0f3f1e57096a3976390d6a191f41.php from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/views/1fb55e30bd5b0f3f1e57096a3976390d6a191f41.php
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/framework/views/b4b3647cb09707e40d644a16a73903320f61e71c.php from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/framework/views/b4b3647cb09707e40d644a16a73903320f61e71c.php
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/.gitignore from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/.gitignore
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200103_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200103_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200104_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200104_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200107_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200107_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200108_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200108_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200110_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200110_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200203_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200203_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200206_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200206_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200211_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200211_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/20200212_query.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/20200212_query.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/laravel-2020-01-03.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/laravel-2020-01-03.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/laravel-2020-02-12.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/laravel-2020-02-12.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/laravel-kkb-common-service-2019-12-31.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/laravel-kkb-common-service-2019-12-31.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/laravel-kkb-common-service-2020-01-03.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/laravel-kkb-common-service-2020-01-03.log
+[2020-02-13 11:56:28 +0800] Sync Log:  [BGN] Copying properties for passport/storage/logs/laravel-kkb-common-service-2020-01-06.log from /host_sync to /app_sync
+[2020-02-13 11:56:28 +0800] Sync Log:  [END] Copying properties for passport/storage/logs/laravel-kkb-common-service-2020-01-06.log
+[2020-02-13 11:56:28 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:56:28.42 on 13 Feb 2020
+[2020-02-13 11:56:28 +0800] Sync Log:  Synchronization complete at 11:56:28  (34 items transferred, 0 skipped, 0 failed)
+[2020-02-13 11:56:48 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:56:48.31 on 13 Feb 2020
+[2020-02-13 11:56:48 +0800] Sync Log:  [BGN] Copying passport/storage/logs/20200213_query.log from /app_sync to /host_sync
+[2020-02-13 11:56:48 +0800] Sync Log:  [END] Copying passport/storage/logs/20200213_query.log
+[2020-02-13 11:56:48 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:56:48.33 on 13 Feb 2020
+[2020-02-13 11:56:48 +0800] Sync Log:  Synchronization complete at 11:56:48  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 11:56:55 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:56:54.87 on 13 Feb 2020
+[2020-02-13 11:56:55 +0800] Sync Log:  [BGN] Updating file passport/storage/logs/20200213_query.log from /app_sync to /host_sync
+[2020-02-13 11:56:55 +0800] Sync Log:  [END] Updating file passport/storage/logs/20200213_query.log
+[2020-02-13 11:56:55 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:56:54.87 on 13 Feb 2020
+[2020-02-13 11:56:55 +0800] Sync Log:  Synchronization complete at 11:56:54  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 11:57:08 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:57:07.86 on 13 Feb 2020
+[2020-02-13 11:57:08 +0800] Sync Log:  [BGN] Updating file passport/storage/logs/20200213_query.log from /app_sync to /host_sync
+[2020-02-13 11:57:08 +0800] Sync Log:  [END] Updating file passport/storage/logs/20200213_query.log
+[2020-02-13 11:57:08 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:57:07.87 on 13 Feb 2020
+[2020-02-13 11:57:08 +0800] Sync Log:  Synchronization complete at 11:57:07  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:01:01 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:01:00.89 on 13 Feb 2020
+[2020-02-13 12:01:01 +0800] Sync Log:  [BGN] Copying passport/test.dat from /app_sync to /host_sync
+[2020-02-13 12:01:26 +0800] Sync Log:  [END] Copying passport/test.dat
+[2020-02-13 12:01:26 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:01:26.06 on 13 Feb 2020
+[2020-02-13 12:01:26 +0800] Sync Log:  Synchronization complete at 12:01:26  (1 item transferred, 0 skipped, 0 failed)
+          ok  Starting native_osx for sync appcode-sync
+          ok  appcode-sync container still running, restarting unison in container
+     command  docker exec appcode-sync supervisorctl restart unison
+unison: stopped
+unison: started
+          ok  starting initial sync of appcode-sync
+     success  Sync container started
+     success  Showing unison logs from your sync container: appcode-sync
+[2020-02-13 12:04:24 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 11:57:07.86 on 13 Feb 2020
+[2020-02-13 12:04:24 +0800] Sync Log:  [BGN] Updating file passport/storage/logs/20200213_query.log from /app_sync to /host_sync
+[2020-02-13 12:04:24 +0800] Sync Log:  [END] Updating file passport/storage/logs/20200213_query.log
+[2020-02-13 12:04:24 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 11:57:07.87 on 13 Feb 2020
+[2020-02-13 12:04:24 +0800] Sync Log:  Synchronization complete at 11:57:07  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:04:24 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:01:00.89 on 13 Feb 2020
+[2020-02-13 12:04:24 +0800] Sync Log:  [BGN] Copying passport/test.dat from /app_sync to /host_sync
+[2020-02-13 12:04:24 +0800] Sync Log:  [END] Copying passport/test.dat
+[2020-02-13 12:04:24 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:01:26.06 on 13 Feb 2020
+[2020-02-13 12:04:24 +0800] Sync Log:  Synchronization complete at 12:01:26  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:06:18 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:06:18.36 on 13 Feb 2020
+[2020-02-13 12:06:18 +0800] Sync Log:  [BGN] Updating file passport/storage/logs/20200213_query.log from /app_sync to /host_sync
+[2020-02-13 12:06:18 +0800] Sync Log:  [END] Updating file passport/storage/logs/20200213_query.log
+[2020-02-13 12:06:18 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:06:18.41 on 13 Feb 2020
+[2020-02-13 12:06:18 +0800] Sync Log:  Synchronization complete at 12:06:18  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:09:37 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:09:37.22 on 13 Feb 2020
+[2020-02-13 12:09:37 +0800] Sync Log:  [BGN] Deleting passport/test.dat from /app_sync
+[2020-02-13 12:09:41 +0800] Sync Log:  [END] Deleting passport/test.dat
+[2020-02-13 12:09:41 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:09:41.18 on 13 Feb 2020
+[2020-02-13 12:09:41 +0800] Sync Log:  Synchronization complete at 12:09:41  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:18:56 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:18:56.56 on 13 Feb 2020
+[2020-02-13 12:18:56 +0800] Sync Log:  [BGN] Copying passport/storage/logs/.20200212_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:18:56 +0800] Sync Log:  [END] Copying passport/storage/logs/.20200212_query.log.swp
+[2020-02-13 12:18:56 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:18:56.57 on 13 Feb 2020
+[2020-02-13 12:18:57 +0800] Sync Log:  Synchronization complete at 12:18:56  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:19:03 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:19:03.23 on 13 Feb 2020
+[2020-02-13 12:19:03 +0800] Sync Log:  [BGN] Deleting passport/storage/logs/.20200212_query.log.swp from /app_sync
+[2020-02-13 12:19:03 +0800] Sync Log:  [END] Deleting passport/storage/logs/.20200212_query.log.swp
+[2020-02-13 12:19:03 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:19:03.23 on 13 Feb 2020
+[2020-02-13 12:19:03 +0800] Sync Log:  Synchronization complete at 12:19:03  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:19:55 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:19:55.28 on 13 Feb 2020
+[2020-02-13 12:19:55 +0800] Sync Log:  [BGN] Copying passport/storage/logs/.20200213_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:19:55 +0800] Sync Log:  [END] Copying passport/storage/logs/.20200213_query.log.swp
+[2020-02-13 12:19:55 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:19:55.28 on 13 Feb 2020
+[2020-02-13 12:19:55 +0800] Sync Log:  Synchronization complete at 12:19:55  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:31:16 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:31:15.68 on 13 Feb 2020
+[2020-02-13 12:31:16 +0800] Sync Log:  [BGN] Deleting passport/storage/logs/.20200213_query.log.swp from /app_sync
+[2020-02-13 12:31:16 +0800] Sync Log:  [END] Deleting passport/storage/logs/.20200213_query.log.swp
+[2020-02-13 12:31:16 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:31:15.68 on 13 Feb 2020
+[2020-02-13 12:31:16 +0800] Sync Log:  Synchronization complete at 12:31:15  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:32:32 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:32:31.66 on 13 Feb 2020
+[2020-02-13 12:32:32 +0800] Sync Log:  [BGN] Copying kkb-tss/storage/logs/.20191017_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:32:32 +0800] Sync Log:  [END] Copying kkb-tss/storage/logs/.20191017_query.log.swp
+[2020-02-13 12:32:32 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:32:31.67 on 13 Feb 2020
+[2020-02-13 12:32:32 +0800] Sync Log:  Synchronization complete at 12:32:31  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:32:54 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:32:54.26 on 13 Feb 2020
+[2020-02-13 12:32:54 +0800] Sync Log:  [BGN] Copying kkb-tss/storage/logs/.20191118_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:32:54 +0800] Sync Log:  [END] Copying kkb-tss/storage/logs/.20191118_query.log.swp
+[2020-02-13 12:32:54 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:32:54.27 on 13 Feb 2020
+[2020-02-13 12:32:54 +0800] Sync Log:  Synchronization complete at 12:32:54  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:33:00 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:32:59.90 on 13 Feb 2020
+[2020-02-13 12:33:00 +0800] Sync Log:  [BGN] Deleting kkb-tss/storage/logs/.20191118_query.log.swp from /app_sync
+[2020-02-13 12:33:00 +0800] Sync Log:  [END] Deleting kkb-tss/storage/logs/.20191118_query.log.swp
+[2020-02-13 12:33:00 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:32:59.90 on 13 Feb 2020
+[2020-02-13 12:33:00 +0800] Sync Log:  Synchronization complete at 12:32:59  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:33:29 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:33:29.04 on 13 Feb 2020
+[2020-02-13 12:33:29 +0800] Sync Log:  [BGN] Copying kkb-tss-admin/storage/logs/.20191205_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:33:29 +0800] Sync Log:  [END] Copying kkb-tss-admin/storage/logs/.20191205_query.log.swp
+[2020-02-13 12:33:29 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:33:29.04 on 13 Feb 2020
+[2020-02-13 12:33:29 +0800] Sync Log:  Synchronization complete at 12:33:29  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:33:32 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:33:32.04 on 13 Feb 2020
+[2020-02-13 12:33:32 +0800] Sync Log:  [BGN] Deleting kkb-tss-admin/storage/logs/.20191205_query.log.swp from /app_sync
+[2020-02-13 12:33:32 +0800] Sync Log:  [END] Deleting kkb-tss-admin/storage/logs/.20191205_query.log.swp
+[2020-02-13 12:33:32 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:33:32.04 on 13 Feb 2020
+[2020-02-13 12:33:32 +0800] Sync Log:  Synchronization complete at 12:33:32  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 12:33:51 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 12:33:50.75 on 13 Feb 2020
+[2020-02-13 12:33:51 +0800] Sync Log:  [BGN] Copying kkb-tss-admin/storage/logs/.20200212_query.log.swp from /host_sync to /app_sync
+[2020-02-13 12:33:51 +0800] Sync Log:  [END] Copying kkb-tss-admin/storage/logs/.20200212_query.log.swp
+[2020-02-13 12:33:51 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 12:33:50.76 on 13 Feb 2020
+[2020-02-13 12:33:51 +0800] Sync Log:  Synchronization complete at 12:33:50  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 17:04:15 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:04:14.73 on 13 Feb 2020
+[2020-02-13 17:04:15 +0800] Sync Log:  [BGN] Deleting kkb-tss-admin/storage/logs/.20200212_query.log.swp from /app_sync
+[2020-02-13 17:04:15 +0800] Sync Log:  [END] Deleting kkb-tss-admin/storage/logs/.20200212_query.log.swp
+[2020-02-13 17:04:15 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:04:14.73 on 13 Feb 2020
+[2020-02-13 17:04:16 +0800] Sync Log:  Synchronization complete at 17:04:15  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 17:18:34 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:18:34.00 on 13 Feb 2020
+[2020-02-13 17:18:34 +0800] Sync Log:  [BGN] Copying learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp from /host_sync to /app_sync
+[2020-02-13 17:18:34 +0800] Sync Log:  [END] Copying learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp
+[2020-02-13 17:18:34 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:18:34.01 on 13 Feb 2020
+[2020-02-13 17:18:34 +0800] Sync Log:  Synchronization complete at 17:18:34  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 17:19:11 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:19:11.65 on 13 Feb 2020
+[2020-02-13 17:19:11 +0800] Sync Log:  [BGN] Deleting learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp from /app_sync
+[2020-02-13 17:19:11 +0800] Sync Log:  [END] Deleting learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp
+[2020-02-13 17:19:11 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:19:11.66 on 13 Feb 2020
+[2020-02-13 17:19:11 +0800] Sync Log:  Synchronization complete at 17:19:11  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 17:20:59 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:20:59.44 on 13 Feb 2020
+[2020-02-13 17:20:59 +0800] Sync Log:  [BGN] Copying learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp from /host_sync to /app_sync
+[2020-02-13 17:20:59 +0800] Sync Log:  [END] Copying learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp
+[2020-02-13 17:20:59 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:20:59.44 on 13 Feb 2020
+[2020-02-13 17:20:59 +0800] Sync Log:  Synchronization complete at 17:20:59  (1 item transferred, 0 skipped, 0 failed)
+[2020-02-13 17:30:52 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) started propagating changes at 17:30:52.42 on 13 Feb 2020
+[2020-02-13 17:30:52 +0800] Sync Log:  [BGN] Deleting learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp from /app_sync
+[2020-02-13 17:30:52 +0800] Sync Log:  [END] Deleting learn-center/storage/logs/.laravel-kkb-common-service-2020-02-06.log.swp
+[2020-02-13 17:30:52 +0800] Sync Log:  UNISON 2.51.2 (OCAML 4.06.1) finished propagating changes at 17:30:52.42 on 13 Feb 2020
+[2020-02-13 17:30:52 +0800] Sync Log:  Synchronization complete at 17:30:52  (1 item transferred, 0 skipped, 0 failed)
