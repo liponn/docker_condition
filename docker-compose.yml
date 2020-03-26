@@ -1,78 +1,99 @@
 # web server
 version: "3"
 services:
- nginx:
-   image: nginx:latest
-   container_name: docker-nginx
-   ports:
-     - "80:80"
-     - "443:443"
-   volumes:
-     # app
-     - ./app/src:/usr/share/nginx/html
-     # nginx configs
-     - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
-     - ./nginx/conf.d/fastcgi.conf:/etc/nginx/fastcgi.conf:ro
-     - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
-     # nginx logs
-     - ./nginx/log:/var/log/nginx
-     # certificates
-     - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
-     - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
-   networks:
-     - kkb-net
+  nginx:
+    image: nginx:latest
+    container_name: docker-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      # app
+      - ./app/src:/usr/share/nginx/html
+      # nginx configs
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/conf.d/fastcgi.conf:/etc/nginx/fastcgi.conf:ro
+      - ./nginx/conf.d/:/etc/nginx/conf.d/:ro
+      # nginx logs
+      - ./nginx/log:/var/log/nginx
+      # certificates
+      - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
+      - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
+    networks:
+      - kkb-net
 
-   # php-fpm
- fpm:
-   build: ./php-fpm
-   container_name: docker-php
-   ports:
-     - 9001:9000
-   volumes:
-     - ./app/src:/usr/share/nginx/html
-     #同步宿主机的sshkey到docker
-     - ~/.ssh:/root/.ssh:ro
-     # Your php.ini
-     - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
-     - ./php-fpm/entrypoint.sh:/entrypoint.sh:ro
-   working_dir: /usr/share/nginx/html
-   networks:
-     - kkb-net
+
+# php-fpm
+  fpm:
+    build: ./php-fpm
+    container_name: docker-php
+    ports:
+      - 9001:9000
+    volumes:
+      - ./app/src:/usr/share/nginx/html
+      #同步宿主机的sshkey到docker
+      - ~/.ssh:/root/.ssh:ro
+      # Your php.ini
+      - ./php-fpm/php.ini-production:/usr/local/etc/php/php.ini:ro
+      - ./php-fpm/entrypoint.sh:/entrypoint.sh:ro
+    working_dir: /usr/share/nginx/html
+    networks:
+      - kkb-net
 
  
 # database
- mysql:
-   image: mysql:latest
-   # restart: always
-   container_name: docker-mysql
-   ports:
-     # Allow client to access 3306
-     - "3306:3306"
-   volumes:
-     # NOTE: your data will be stored in ./mysql
-     - ./mysql_data:/var/lib/mysql:rw
-     - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
-   environment:
-     - MYSQL_ROOT_PASSWORD=root
-   #当停掉mysql时防止数据丢失  entrypoint: ['/entrypoint.sh']
-   networks:
-     - kkb-net
+  mysql:
+    image: mysql:latest
+    # restart: always
+    container_name: docker-mysql
+    ports:
+      # Allow client to access 3306
+      - "3306:3306"
+    volumes:
+      # NOTE: your data will be stored in ./mysql
+      - ./mysql_data:/var/lib/mysql:rw
+      - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+    #当停掉mysql时防止数据丢失  entrypoint: ['/entrypoint.sh']
+    networks:
+      - kkb-net
 
 
 
  #redis
- redis:
-   image: redis:latest
-   container_name: docker-redis
-   volumes:
-     - ./redis_data:/data:rw
-     - ./redis_conf/redis.conf:/etc/redis.conf:ro
-   command:
-     redis-server 
-   networks:
-     - kkb-net
-   ports:
-     - "6379:6379"
+  redis:
+    image: redis:latest
+    container_name: docker-redis
+    volumes:
+      - ./redis_data:/data:rw
+      - ./redis_conf/redis.conf:/etc/redis.conf:ro
+    command:
+      redis-server 
+    networks:
+      - kkb-net
+    ports:
+      - "6379:6379"
+
+ #php-swoole
+  php-swoole:
+    build: ./php-swoole
+    container_name: docker-swoole
+    # ports:
+    #   - 9001:9000
+    volumes:
+      - ./app/src:/usr/share/nginx/html
+      #同步宿主机的sshkey到docker
+      - ~/.ssh:/root/.ssh:ro
+    tty: true
+    working_dir: /usr/share/nginx/html
+    ports:
+      - "9501-9505:9501-9505"
+    networks:
+      - kkb-net
+
+
+
 
 networks:
   kkb-net:
