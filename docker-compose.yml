@@ -17,8 +17,7 @@ services:
       # nginx logs
       - ./nginx/log:/var/log/nginx
       # certificates
-      - ./nginx/ca/server.crt/:/etc/nginx/server.crt:ro
-      - ./nginx/ca/server.key/:/etc/nginx/server.key:ro
+      - ./nginx/ca/:/etc/nginx/cert/:ro
     networks:
       - kkb-net
 
