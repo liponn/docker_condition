@@ -7,7 +7,7 @@ services:
     ports:
       - "80:80"
       - "443:443"
-      - "9090:9090"
+      - "9099:9099"
     volumes:
       # app
       - ./app/src:/usr/share/nginx/html
