@@ -30,7 +30,7 @@ services:
     ports:
       - 9001:9000
     volumes:
-      - ./app/src:/usr/share/nginx/html
+      - ./app/src:/usr/share/nginx/html:cached
       #同步宿主机的sshkey到docker
       - ~/.ssh:/root/.ssh:ro
       - ~/.ssh:/var/www/.ssh:ro
