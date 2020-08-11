@@ -2,7 +2,7 @@
 # See: https://hub.docker.com/_/php/
 ######
 
-FROM php:7.1-fpm
+FROM php:7.2-fpm
 MAINTAINER lip <13015531717@163.com>
 
 ########  set time
@@ -33,7 +33,7 @@ git \
 vim \
 zip \
 unzip \
-&& docker-php-ext-install -j$(nproc) mcrypt pcntl zip pdo_mysql bcmath sockets \
+&& docker-php-ext-install -j$(nproc) pcntl zip pdo_mysql bcmath sockets \
 && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
 && docker-php-ext-install -j$(nproc) gd \
 && pecl install redis \

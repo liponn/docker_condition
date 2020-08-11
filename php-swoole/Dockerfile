@@ -15,14 +15,14 @@ deb https://mirrors.aliyun.com/debian buster-updates main > /etc/apt/sources.lis
 # --build-arg timezone=Asia/Shanghai
 ARG timezone
 # app env: prod pre test dev
-ARG app_env=prod
+ARG app_env=dev
 # default use www-data user
 # ARG work_user=www-data
 
 ENV APP_ENV=${app_env:-"prod"} \
     TIMEZONE=${timezone:-"Asia/Shanghai"} \
-    PHPREDIS_VERSION=5.1.0 \
-    SWOOLE_VERSION=4.4.15 \
+    PHPREDIS_VERSION=5.3.1 \
+    SWOOLE_VERSION=4.5.2 \
     COMPOSER_ALLOW_SUPERUSER=1
 
 # Libs -y --no-install-recommends
