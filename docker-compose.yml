@@ -80,9 +80,9 @@ services:
   php-swoole:
     build: ./php-swoole
     container_name: docker-swoole
-    # ports:
-    #   - 9001:9000
     volumes:
+      # Your php.ini
+      - ./php-swoole/php.ini-production:/usr/local/etc/php/php.ini:ro
       - ./app/src:/usr/share/nginx/html
       #同步宿主机的sshkey到docker
       - ~/.ssh:/root/.ssh:ro
