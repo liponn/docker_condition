@@ -42,16 +42,16 @@ unzip \
 && docker-php-ext-enable redis swoole xdebug 
 
 ##安装lib kafuka
-RUN git clone https://github.com/edenhill/librdkafka.git \
+RUN git clone git://github.com/edenhill/librdkafka.git \
 && cd librdkafka \
 && ./configure \
 && make && make install
-RUN git clone https://github.com/arnaud-lb/php-rdkafka.git \
+RUN git clone git://github.com/arnaud-lb/php-rdkafka.git \
 && cd php-rdkafka \
 && phpize \
 && ./configure --with-php-config=/usr/local/bin/php-config \
 && make && make install \
-
+&& rm -rf /librdkafka \
 
 ##rinetd 端口映射 解决php连接127.0.0.1:redis
 ##/etc/rinetd.conf
