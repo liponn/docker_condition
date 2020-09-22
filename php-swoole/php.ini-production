@@ -2000,5 +2000,5 @@ ldap.max_links = -1
 
 
 
-extension=rdkafka.so
+;extension=rdkafka.so
 swoole.use_shortname = off
