@@ -41,7 +41,7 @@ RUN apt-get update \
         libfreetype6-dev \
 # Install PHP extensions
     && docker-php-ext-install \
-       bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm
+       pcntl bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm
 
 # Install composer
 Run curl -sS https://getcomposer.org/installer | php \
