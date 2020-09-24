@@ -15,7 +15,7 @@ deb https://mirrors.aliyun.com/debian buster-updates main > /etc/apt/sources.lis
 # --build-arg timezone=Asia/Shanghai
 ARG timezone
 # app env: prod pre test dev
-ARG app_env=dev
+ARG app_env=local
 # default use www-data user
 # ARG work_user=www-data
 
