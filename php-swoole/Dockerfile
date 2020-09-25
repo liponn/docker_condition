@@ -29,6 +29,7 @@ ENV APP_ENV=${app_env:-"prod"} \
 RUN apt-get update \
     && apt-get install -y \
         curl wget git zip unzip less vim procps lsof tcpdump htop openssl \
+        ssh \
         supervisor \
         strace \
         net-tools \
@@ -44,8 +45,9 @@ RUN apt-get update \
        pcntl bcmath gd pdo_mysql mbstring sockets zip sysvmsg sysvsem sysvshm
 
 # Install composer
-Run curl -sS https://getcomposer.org/installer | php \
+Run wget https://mirrors.aliyun.com/composer/composer.phar \
     && mv composer.phar /usr/local/bin/composer \
+    && chmod u+x /usr/local/bin/composer \
     && composer self-update --clean-backups \
 
 # Install redis extension
