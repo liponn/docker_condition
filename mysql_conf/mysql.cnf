@@ -7,6 +7,7 @@ default-character-set=utf8mb4
 [mysqld]
 character-set-server=utf8mb4
 collation-server=utf8mb4_unicode_ci
+innodb_use_native_aio=0
 
 
 # pdo 目前暂不支持 mysql8默认的'caching_sha2_password'密码认证

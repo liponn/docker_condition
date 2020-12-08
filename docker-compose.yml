@@ -56,6 +56,7 @@ services:
       - ./mysql_conf/mysql.cnf:/etc/mysql/conf.d/mysql.cnf:ro
     environment:
       - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_PASSWORD=root
     #当停掉mysql时防止数据丢失  entrypoint: ['/entrypoint.sh']
     networks:
       - kkb-net
@@ -90,6 +91,9 @@ services:
     working_dir: /usr/share/nginx/html
     ports:
       - "9501-9505:9501-9505"
+      - "9571:9571"
+    environment:
+      - APP_ENV=local
     networks:
       - kkb-net
 

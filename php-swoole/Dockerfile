@@ -23,7 +23,8 @@ ENV APP_ENV=${app_env:-"prod"} \
     TIMEZONE=${timezone:-"Asia/Shanghai"} \
     PHPREDIS_VERSION=5.3.1 \
     SWOOLE_VERSION=4.5.2 \
-    COMPOSER_ALLOW_SUPERUSER=1
+    COMPOSER_ALLOW_SUPERUSER=1 \
+    XLSWRITER_VERSION=1.3.4.1
 
 # Libs -y --no-install-recommends
 RUN apt-get update \
@@ -55,6 +56,16 @@ Run wget https://mirrors.aliyun.com/composer/composer.phar \
     && pecl install /tmp/redis.tar.tgz \
     && rm -rf /tmp/redis.tar.tgz \
     && docker-php-ext-enable redis \
+
+# Install xlswriter extension
+    && curl -fsSL "https://pecl.php.net/get/xlswriter-${XLSWRITER_VERSION}.tgz" -o xlswriter.tgz \
+    && mkdir -p /tmp/xlswriter \
+    && tar -xf xlswriter.tgz -C /tmp/xlswriter --strip-components=1 \
+    && rm xlswriter.tgz \
+    && cd /tmp/xlswriter \
+    && phpize && ./configure --enable-reader && make && make install \
+    && docker-php-ext-enable xlswriter \
+
 
 # Install swoole extension
     && wget https://github.com/swoole/swoole-src/archive/v${SWOOLE_VERSION}.tar.gz -O swoole.tar.gz \
