@@ -79,10 +79,20 @@ RUN wget https://github.com/arnaud-lb/php-rdkafka/archive/3.0.4.tar.gz -O /tmp/p
 RUN echo '0.0.0.0 6379 docker-redis 6379\n0.0.0.0 80 docker-nginx 80' >> /etc/rinetd.conf
 
 ## 安装composer php
-Run wget https://mirrors.aliyun.com/composer/composer.phar \
-    && mv composer.phar /usr/local/bin/composer \
-    && chmod u+x /usr/local/bin/composer \
-    && composer self-update --clean-backups
+#Run wget https://mirrors.aliyun.com/composer/composer.phar \
+#    && mv composer.phar /usr/local/bin/composer \
+#    && chmod u+x /usr/local/bin/composer \
+#    && composer self-update --clean-backups
+
+# 安装特定版本的composer
+Run wget https://install.phpcomposer.com/installer && mv installer installer.php \
+&& php installer.php --version=1.10.20 \
+&& rm -f installer.php \
+&& mv composer.phar /usr/local/bin/composer
+
+
+
+
 
 COPY ./entrypoint.sh /
 RUN chmod +x /entrypoint.sh
