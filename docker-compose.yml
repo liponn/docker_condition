@@ -29,7 +29,6 @@ services:
     container_name: docker-php
     ports:
       - 9001:9000
-      - 9011:9011
     volumes:
       - ./app/src:/usr/share/nginx/html:cached
       #同步宿主机的sshkey到docker
