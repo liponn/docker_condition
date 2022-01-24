@@ -2006,7 +2006,9 @@ xdebug.idekey=PHPSTORM
 xdebug.remote_autostart=1
 xdebug.remote_log=/home/tmp/xdebug.log
 
-
+xdebug.var_display_max_children=128
+xdebug.var_display_max_data=512
+xdebug.var_display_max_depth=10
 
 
 

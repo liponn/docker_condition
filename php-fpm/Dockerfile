@@ -85,7 +85,7 @@ RUN echo '0.0.0.0 6379 docker-redis 6379\n0.0.0.0 80 docker-nginx 80' >> /etc/ri
 #    && composer self-update --clean-backups
 
 # 安装特定版本的composer
-Run wget https://install.phpcomposer.com/installer && mv installer installer.php \
+Run wget https://getcomposer.org/installer && mv installer installer.php \
 && php installer.php --version=1.10.20 \
 && rm -f installer.php \
 && mv composer.phar /usr/local/bin/composer

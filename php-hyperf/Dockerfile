@@ -22,7 +22,7 @@ RUN set -eux \
     && apk add --no-cache --virtual .php-exts \
         'php7-redis=5.3.2-r3' \
         'php7-amqp=1.10.2-r1' \
-        'php7-ftp=7.4.21-r1' \
+##        'php7-ftp=7.4.21-r1' \
         'php7-memcached=3.1.5-r1' \
         'php7-mongodb=1.9.0-r1' \
     && apk add --no-cache --virtual .build-deps \
