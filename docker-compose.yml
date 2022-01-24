@@ -81,6 +81,8 @@ services:
   php-swoole:
     build: ./php-swoole
     container_name: docker-swoole
+    cap_add:
+      - ALL
     volumes:
       # Your php.ini
       - ./php-swoole/php.ini-production:/usr/local/etc/php/php.ini:ro
@@ -97,6 +99,26 @@ services:
     networks:
       - kkb-net
 
+ #php-hyperf
+  php-hyperf:
+    build: ./php-hyperf
+    container_name: docker-hyperf
+    volumes:
+      # Your php.ini
+      #- ./php-swoole/php.ini-production:/usr/local/etc/php/php.ini:ro
+      - ./app/src:/usr/share/nginx/html
+      #同步宿主机的sshkey到docker
+      - ~/.ssh:/root/.ssh:ro
+      - ~/.composer/auth.json:/root/.composer/auth.json:ro
+    tty: true
+    working_dir: /usr/share/nginx/html
+    ports:
+      - "9601-9605:9601-9605"
+      - "9671:9671"
+    environment:
+      - APP_ENV=local
+    networks:
+      - kkb-net
 
 
 

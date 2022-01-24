@@ -2004,7 +2004,7 @@ xdebug.remote_host=host.docker.internal
 xdebug.remote_port=9011
 xdebug.idekey=PHPSTORM
 xdebug.remote_autostart=1
-
+xdebug.remote_log=/home/tmp/xdebug.log
 
 
 
